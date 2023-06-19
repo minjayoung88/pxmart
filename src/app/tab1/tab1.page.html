@@ -1,0 +1,33 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+     지도 검색
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list style="margin-top: 10px;">
+    <ion-item>
+      <ion-label>시도</ion-label>
+      <ion-select value="전체" [(ngModel)]="sel" (ionChange)="R1_Chage()">
+        <ion-select-option  *ngFor="let region of Region_1" >{{region}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>시군구</ion-label>
+      <ion-select value="전체" [(ngModel)]="sel_" (ionChange)="R2_Chage()">
+        <ion-select-option  *ngFor="let region of Region_2">{{region}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+    <!-- <ion-button expand="block" shape="round" fill="outline" style="margin-top: 30px;height: 40px;" (click) = "OpneChoose()">
+        <ion-icon name="search"></ion-icon>
+        파일업로드하기
+    </ion-button> -->
+    <div #map id="map_canvas" style="margin-top:20px; width:100%;height:70%;border:1px solid"></div>  
+ 
+</ion-content>

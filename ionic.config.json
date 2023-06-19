@@ -1,0 +1,7 @@
+{
+  "name": "px_find",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

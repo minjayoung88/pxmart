@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      리스트 검색
+    </ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+  
+<ion-content padding>
+  <ion-list style="margin-top: 10px;margin-bottom: 5px;">
+    <ion-item>
+      <ion-label>시도</ion-label>
+      <ion-select value="전체" [(ngModel)]="sel" (ionChange)="R1_Chage()">
+        <ion-select-option  *ngFor="let region of Region_1" >{{region}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>시군구</ion-label>
+      <ion-select value="전체" [(ngModel)]="sel_" (ionChange)="R2_Chage()">
+        <ion-select-option  *ngFor="let region of Region_2">{{region}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+    <!-- Theme classes dark, material, bootstrap -->
+    <ngx-datatable 
+      class="material"
+      [limit]="4" 
+      [rows]="rows" 
+      [rowHeight]="'auto'" 
+      [columns]="columns"
+      [columnMode]="'standard'" 
+      [sortType]="'multi'" 
+      [headerHeight]="50" 
+      [footerHeight]="50">
+    </ngx-datatable>
+
+</ion-content>
